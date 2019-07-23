@@ -80,6 +80,12 @@ theme: landscape
 deploy:
   type:
 
+robotstxt:
+  useragent: "*"
+  disallow:
+  allow:
+    - /
+  sitemap: /sitemap.xml
 
 #sitemap
 sitemap:
