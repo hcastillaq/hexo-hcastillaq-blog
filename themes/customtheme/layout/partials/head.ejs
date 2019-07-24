@@ -1,0 +1,250 @@
+<head>
+	<!-- Metas -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+	<% if (is_home()) { %>
+		<meta name="title" content="<%= config.title %>">
+		<meta name="description" content="<%= config.description %>">
+	
+	<% } %>
+
+	<% if (is_post()) { %>
+		<meta name="title" content="<%= page.title %>">
+		<meta name="description" content="<%= page.description %>">
+	<% } %>
+
+	<meta name="author" content="<%= config.author %>">
+	
+	<!-- Google Search Console -->
+	<meta name="google-site-verification" content="y-aUSKf8Em9IF2r6RSxci9wRXQrG6jxylGIAiUwZPgo" />
+
+	<!-- Google analytics  -->
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+
+	<!-- AMP -->
+	<link rel="canonical" href="<%= url %>">
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	<script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
+	
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<!-- -------------------------- -->
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=B612">
+	<style amp-custom>
+		*{
+			font-family: B612;
+		}
+
+		.container{
+			margin: 0 15vw;
+			display:flex;
+		}
+
+		.content{
+			flex:1;
+			margin-top: 5vh;
+			padding: 20px;
+		}
+
+		.content__subtitle{
+			display: flex;
+			flex-direction: column;
+			font-size: .9em;
+			margin-bottom: 40px;
+			font-style: italic;
+			color: gray;
+		}
+
+		li{
+			list-style: none;
+		}
+
+		.sidebar{
+			padding: 20vh 20px;
+			width: 180px;
+			min-height: 200px;
+			max-height: 100vh;
+		}
+
+		.sidebar__content{
+			padding-left: 30px;
+		}
+
+		.sidebar__content__author{
+			border-bottom: 1px solid gray;
+			text-align: center;
+			padding-bottom: 10px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		.sidebar__content__author span{
+			margin-top: 20px;
+		}
+
+		.sidebar__content__list{
+			margin-top: 20px;
+			padding: 0px;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.sidebar__content__list > li > a {
+			text-decoration: none;
+			color: black;
+		}
+	
+		.post__head{
+			margin-bottom: 20px;
+		}
+
+		.post__head__date{
+			font-size: .8em;
+			color: gray;
+			text-align: center;
+		}
+
+		.post__head__title{
+			text-align: center;
+		}
+
+		.post__head__title > h1{
+			font-size: 1.2em;
+		}
+
+		.post__head__tags{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.post__head__tags > span{
+			font-size: .8em;
+			margin-right: 2px;
+			color: gray;
+		}
+
+		.post__head__tags > .tag-list{
+			display: flex;
+			margin: 0px;
+			padding: 0px;
+		}
+
+		.post__head__tags > .tag-list > li{
+			margin: 2px;
+			font-size: .8em;
+		}
+
+		.post__head__tags > .tag-list > li > a{
+			color: grey;
+			text-decoration: none;
+		}
+
+		.post__head__tags > .tag-list > li::before{ 
+			content: " / ";
+			color: grey;
+		}
+		
+		.post__head__tags > .tag-list  > li:nth-of-type(n+2)::after{ 
+			content: " / ";
+			color: grey;
+		}
+
+		.post__body  li{
+			list-style: disc;
+		}
+
+		.list__publications{
+		}
+
+		.list__publications__publication{
+			display: flex;
+			margin-bottom: 10px;
+		}
+
+		.list__publications__publication__date{
+			margin-right: 3vw;
+			color: gray;
+		}
+		
+		.list__publications__publication__item > a {
+			text-decoration: none;
+			color: black;
+			font-size: 1.1em;
+			margin-bottom: 10px;
+		}
+
+		.list__publications__publication__item > .tag-list{
+			display: flex;
+			margin: 0px;
+			padding: 0px;
+			font-size: .9em;
+			margin-top: 10px;
+		}
+		.list__publications__publication__item > .tag-list > li::before {
+			content: "/ ";
+			color: gray;
+		}
+	
+		.list__publications__publication__item > .tag-list a{
+			color: gray;
+			text-decoration: none;
+			margin-right: 5px;
+		}
+
+		.img--container{
+			max-width: 40vw;
+			margin: 20px 0px;
+		}
+
+		.tags__page{
+
+		}
+
+		.tags__page__list-tags{
+			margin-bottom: 20px;
+		}
+
+		.tags__page__list-tags span{
+			color: gray;
+			font-size: .8em;
+		}
+
+		.tags__page__list-tabs-pages span{
+			color: gray;
+		}
+
+		.tags__page__list-tabs-pages ul  > li > a{
+			text-decoration: none;
+			color: black;
+		}
+		
+
+		#imgsolution{
+		}
+
+		.highlight{
+			background: #e2e2e2;
+			box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+			font-size: .9em;
+		}
+		.highlight .gutter{
+			background: rgba(0,0,0, .2);
+			font-size: .9em;
+			user-select: none;
+		}
+
+		@media (max-width: 768px) {
+			.container{
+				margin: 0px 5vw;
+			}
+		}
+		@media (max-width: 425px) {
+			.container{
+				margin: 0px 0vw;
+			}
+		}
+	</style>
+</head>

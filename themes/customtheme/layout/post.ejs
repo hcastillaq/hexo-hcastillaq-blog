@@ -1,0 +1,42 @@
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "TechArticle",
+	"dependencies": "none",
+  "headline": "<%= page.title %>",
+  "datePublished": "<%= page.date %>",
+  "dateModified": "<%= page.updated %>",
+	"author": "<%= config.author %>",
+  "description": "<%= page.description %>"
+}
+</script>
+
+<div class="post">
+	<%#  ---------- Post Head -------------- %>
+	<div class="post__head">
+		<%# ------------- Post Title ------------- %>
+		<div class="post__head__title">
+			<h1> <%= page.title %> </h1>
+		</div>
+		<%# ---------------------------------------- %>
+		
+		<div class="post__head__date">
+			<span> Fecha: <%= page.updated.format('YYYY-MM-DD') %> </span>
+		</div>
+		<%# -------------------- Post Tags ---------- %>
+		<div class="post__head__tags">
+			<span>Tags: </span>
+			<%- list_tags(page.tags, {
+				show_count: false,
+			}) %>
+		</div>
+		<%# --------------------------------------- %>
+	</div>
+	<%# --------------------------------------- %>
+
+	<%# -------------- Post Body -------------- %>
+	<div class="post__body">
+		<%- page.content %>
+	</div>
+	<%# --------------------------------------- %>
+</div>

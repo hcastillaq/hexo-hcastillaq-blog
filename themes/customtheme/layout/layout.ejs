@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html amp>
+	<%- include('partials/head') %>
+<body>
+
+	<amp-analytics type="gtag" data-credentials="include">
+	<script type="application/json">
+	{
+		"vars" : {
+			"gtag_id": "UA-144473671-1",
+			"config" : {
+				"UA-144473671-1": { "groups": "default" }
+			}
+		}
+	}
+	</script>
+	</amp-analytics>
+
+	<div class="container">
+		<%- include('partials/sidebar') %>
+		<div class="content">
+			<div class="content__subtitle">
+				<span>
+					<%= config.subtitle %> 
+				</span>
+				<span>- Aaron Swartz</span>
+			</div>
+			<%- body %>
+		</div>
+	</div>
+</body>
+</html>

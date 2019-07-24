@@ -1,0 +1,18 @@
+<div class="sidebar">
+	<div class="sidebar__content">
+		<div class="sidebar__content__author">
+			<amp-img src="/img/avatar.jpg" 
+				alt="Hernan Castilla" height="80" width="80"></amp-img>
+			<span><%= config.author %></span>
+		</div>
+		
+		<ul class="sidebar__content__list">
+			<li> <a href="/"> Home </a> </li>
+			<% site.pages.forEach(function(page){ %>
+				<li>
+					<a href="/<%= page.path %>"> <%= page.title %> </a>
+				</li>
+			<% }); %>
+		</ul>
+	</div>
+</div>

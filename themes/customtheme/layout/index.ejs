@@ -1,0 +1,18 @@
+<ul class="list__publications">
+	<% page.posts.forEach(function(post){ %>
+		<li class="list__publications__publication">
+
+			<div class="list__publications__publication__date">
+				<%= post.date.format('YYYY-MM-DD')%>
+			</div>
+
+			<div class="list__publications__publication__item">
+				<a href="<%= post.path %>"> <%= post.title %> </a>
+				<%- list_tags(post.tags, { 
+					show_count: false,
+				}) %>
+			</div>
+
+		</li>
+	<% }); %>
+</ul>

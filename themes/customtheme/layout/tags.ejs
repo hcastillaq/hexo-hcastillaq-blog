@@ -1,0 +1,24 @@
+<div class="tags__page">
+
+	<div class="tags__page__list-tags">
+		<% site.tags.forEach(function(tag){ %>
+			<span> # <%= tag.name %> </span>
+		<% }); %>
+	</div>
+
+	<div class="tags__page__list-tabs-pages">
+		<% site.tags.forEach(function(tag){ %>
+			<span> <%= tag.name %> </span>
+		
+			<ul>
+				<% tag.posts.forEach( function(post){ %> 
+				<li>
+					<a href="/<%= post.path %>"> <%= post.title %> </a>
+				</li>
+				<%}); %>
+			</ul>
+
+		<% }); %>
+	</div>
+
+</div>
