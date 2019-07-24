@@ -1,1 +1,11 @@
-<span> Tag </span>
+<div class="tags__page">
+	<span># <%= page.tag %></span> 
+
+	<ul class="tags__page__list">
+		<% page.posts.forEach(function(post){%>
+			<li>
+				<a href="/<%= post.path %>"> <%= post.title %> </a>
+			</li>
+		<%});%>
+	</ul>
+</div>

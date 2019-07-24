@@ -16,16 +16,49 @@
 	</script>
 	</amp-analytics>
 
+	<%# Social datos estructurados %>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "<%= config.author %>",
+			"url": "<%= config.url %>",
+			"sameAs": [
+				"http://www.facebook.com/<%= config.facebook_username %>",
+				"http://instagram.com/<%= config.instagram_username %>",
+				"http://github.com/<%= config.github_username %>",
+				"http://twitter.com/<%= config.twitter_username %>",
+				"http://medium.com/@<%= config.medium_username %>"
+			]
+		}
+	</script>
+
+	<%#  Web Page  %>
+	<script type="application/ld+json">
+	{
+			"@context": "http://schema.org",
+			"@type": "WebPage",
+			"name": "<%= config.author %>",
+			"description": "<%= config.description %>",
+			"publisher": {
+					"@type": "ProfilePage",
+					"name": "<%= config.author %> Blog"
+			}
+	}
+	</script>
+
 	<div class="container">
 		<%- include('partials/sidebar') %>
 		<div class="content">
 			<div class="content__subtitle">
 				<span>
-					<%= config.subtitle %> 
+					<%= config.phrase %> 
 				</span>
-				<span>- Aaron Swartz</span>
+				<span>- <%= config.authorprashe %></span>
 			</div>
+			
 			<%- body %>
+		
 		</div>
 	</div>
 </body>
