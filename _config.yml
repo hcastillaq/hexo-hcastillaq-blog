@@ -4,16 +4,18 @@
 
 # Site
 title: Hernan castilla - blog
-subtitle: «Sólo aquellos que están cegados por la codicia se negarían a hacerle una copia a un amigo».
+subtitle: Sólo aquellos que están cegados por la codicia se negarían a hacerle una copia a un amigo.
 description: Blog personal de hernan castilla.
 keywords:
 author: Hernan Castilla
 language: en
 timezone:
 
+phrase: Sólo aquellos que están cegados por la codicia se negarían a hacerle una copia a un amigo.
+authorprashe: Aaron Swartz
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://hcastillaq.github.com
+url: https://hcastillaq.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -73,7 +75,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: aircloud
+theme: customtheme
 
 anchorjs: true
 
@@ -86,9 +88,12 @@ search:
 post_style:
 	indent: 0
 
-github_username:    hcastillaq
-twitter_username:   hcastillaq
-facebook_username:  hcastillaq
+github_username: hcastillaq
+twitter_username: hcastillaq
+facebook_username: hcastillaq
+instagram_username: hcastillaq
+medium_username: hcastillaq
+
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -103,8 +108,8 @@ robotstxt:
 	disallow:
 	allow:
 		- /
-	sitemap: /sitemap.xml
+	sitemap: https://hcastillaq.github.io/sitemap.xml
 
-#sitemap
 sitemap:
 	path: sitemap.xml
+	template: ./sitemap_template.xml

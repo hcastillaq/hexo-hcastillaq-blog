@@ -1,13 +1,12 @@
+---
 title: Mecanica de fluidos - Ejercicio 2
 author: Hernan Castilla
 tags:
   - calor&ondas
   - mecanicafluidos
-  - ''
-  - ''
-  - ''
 categories: []
 date: 2019-07-23 17:00:00
+description: En 1654 Otto Von Guericke, burgomaestre de Magdeburgo e inventor de la bomba de aire, dio una demostración ante la Dieta imperial en la que dos tiros de caballos no pudieron separar a dos semiesferas de latón al vacío.
 ---
 # Esfuerzo
 
@@ -15,4 +14,16 @@ date: 2019-07-23 17:00:00
 
 En 1654 Otto Von Guericke, burgomaestre de Magdeburgo e inventor de la bomba de aire, dio una demostración ante la Dieta imperial en la que dos tiros de caballos no pudieron separar a dos semiesferas de latón al vacío. (a) Demuestre que la fuerza 𝐹necesaria para separar a las semiesferas es 𝐹=𝜋𝑅2∆𝑝, donde 𝑅es el radio exterior de las semiesferas y ∆𝑝es la diferencia de presiones dentro y fuera de la esfera.
 
-![Soluciones del ejercicio](/img/calor&ondas/mecanicafluidos/calor_taller_1_2.jpg)
+<amp-image-lightbox id="imgsolution" layout="nodisplay" ></amp-image-lightbox>
+<div class="img--container">
+<amp-img 
+	on="tap:imgsolution"
+	alt="Solución"
+	role="button"
+	tabindex="0"
+	src="/img/calor&ondas/mecanicafluidos/calor_taller_1_2.jpg"
+	layout="responsive"
+	width="50"
+	height="60">
+</amp-img>
+</div>
