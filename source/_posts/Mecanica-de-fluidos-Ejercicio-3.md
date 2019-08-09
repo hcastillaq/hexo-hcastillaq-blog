@@ -22,6 +22,7 @@ Un tubo en U sencillo contiene mercurio. Cuando se vierten 11.2 cm de agua en la
 	src="/img/calor&ondas/mecanicafluidos/calor_taller_1_3.jpg"
 	layout="responsive"
 	width="40"
-	height="60">
+	height="60"
+	sizes="(min-width: 768px) 50vw, 90vw">
 </amp-img>
 </div>

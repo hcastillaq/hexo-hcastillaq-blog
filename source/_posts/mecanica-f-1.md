@@ -22,6 +22,7 @@ Un cubo sólido de cobre tiene un borde de 85.5 cm de longitud. ¿Cuánta presi�
 	src="/img/calor&ondas/mecanicafluidos/calor_taller_1_1.jpg"
 	layout="responsive"
 	width="40"
-	height="60">
+	height="60"
+	sizes="(min-width: 768px) 50vw, 90vw">
 </amp-img>
 </div>

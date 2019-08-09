@@ -24,6 +24,7 @@ En 1654 Otto Von Guericke, burgomaestre de Magdeburgo e inventor de la bomba de 
 	src="/img/calor&ondas/mecanicafluidos/calor_taller_1_2.jpg"
 	layout="responsive"
 	width="50"
-	height="60">
+	height="60"
+	sizes="(min-width: 768px) 50vw, 90vw">
 </amp-img>
 </div>
