@@ -1,361 +1,396 @@
 <head>
-	<title> 
-	 	<% if (is_home()) { %>
-			<%= config.title %>
-		<% } %>
+  <title>
+    <% if (is_home()) { %> <%= config.title %> <% } %> <% if (is_post()) { %>
+    <%= page.title %> <% } %>
+  </title>
+  <!-- Metas -->
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width,minimum-scale=1,initial-scale=1"
+  />
 
-		<% if (is_post()) { %>
-			<%= page.title %>
-		<% } %>
-	</title>
-	<!-- Metas -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <% if (is_home()) { %>
+  <meta name="title" content="<%= config.title %>" />
+  <meta name="description" content="<%= config.description %>" />
 
-	<% if (is_home()) { %>
-		<meta name="title" content="<%= config.title %>">
-		<meta name="description" content="<%= config.description %>">
-	
-	<% } %>
+  <% } %> <% if (is_post()) { %>
+  <meta name="title" content="<%= page.title %>" />
+  <meta name="description" content="<%= page.description %>" />
+  <% } %>
 
-	<% if (is_post()) { %>
-		<meta name="title" content="<%= page.title %>">
-		<meta name="description" content="<%= page.description %>">
-	<% } %>
+  <meta name="author" content="<%= config.author %>" />
 
-	<meta name="author" content="<%= config.author %>">
-	
-	<!-- Google Search Console -->
-	<meta name="google-site-verification" content="y-aUSKf8Em9IF2r6RSxci9wRXQrG6jxylGIAiUwZPgo" />
+  <!-- Google Search Console -->
+  <meta
+    name="google-site-verification"
+    content="y-aUSKf8Em9IF2r6RSxci9wRXQrG6jxylGIAiUwZPgo"
+  />
 
-	<!-- Google analytics  -->
-	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <!-- Google analytics  -->
+  <script
+    async
+    custom-element="amp-analytics"
+    src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+  ></script>
 
-	<!-- AMP -->
-	<% if (is_home()) { %>
-		<link rel="canonical" href="<%= config.url %>" />
-	<% } %>
+  <!-- AMP -->
+  <% if (is_home()) { %>
+  <link rel="canonical" href="<%= config.url %>" />
+  <% } %> <% if (is_post()) { %>
+  <link rel="canonical" href="<%= page.permalink %>" />
+  <% } %>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script
+    async
+    custom-element="amp-image-lightbox"
+    src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"
+  ></script>
+  <script
+    async
+    custom-element="amp-social-share"
+    src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"
+  ></script>
 
-	<% if (is_post()) { %>
-		<link rel="canonical" href="<%= page.permalink %>" />
-	<% } %>
-	<script async src="https://cdn.ampproject.org/v0.js"></script>
-	<script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
-	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
-	
-	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-	<!-- -------------------------- -->
-	
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" 			integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=B612">
+  <style amp-boilerplate>
+    body {
+      -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    }
+    @-webkit-keyframes -amp-start {
+      from {
+        visibility: hidden;
+      }
+      to {
+        visibility: visible;
+      }
+    }
+    @-moz-keyframes -amp-start {
+      from {
+        visibility: hidden;
+      }
+      to {
+        visibility: visible;
+      }
+    }
+    @-ms-keyframes -amp-start {
+      from {
+        visibility: hidden;
+      }
+      to {
+        visibility: visible;
+      }
+    }
+    @-o-keyframes -amp-start {
+      from {
+        visibility: hidden;
+      }
+      to {
+        visibility: visible;
+      }
+    }
+    @keyframes -amp-start {
+      from {
+        visibility: hidden;
+      }
+      to {
+        visibility: visible;
+      }
+    }
+  </style>
+  <noscript
+    ><style amp-boilerplate>
+      body {
+        -webkit-animation: none;
+        -moz-animation: none;
+        -ms-animation: none;
+        animation: none;
+      }
+    </style></noscript
+  >
+  <!-- -------------------------- -->
 
-	<style amp-custom>
-		*{
-			font-family: B612;
-		}
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"
+    integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E"
+    crossorigin="anonymous"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap"
+    rel="stylesheet"
+  />
+  <style amp-custom>
+    * {
+      font-family: "Noto Serif JP", serif;
+    }
+    /** ESTRUCTURA DEL CONTENIDO **/
+    .container {
+      margin: 0 20vw;
+      display: flex;
+      overflow: auto;
+      flex-direction: column;
+      min-width: 200px;
+    }
+    @media (max-width: 425px) {
+      .container {
+        margin: 0 5vw;
+      }
+    }
+    .content {
+      flex: 1;
+    }
 
-		.container{
-			margin: 0 15vw;
-			display:flex;
-		}
+    .content__subtitle {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      font-size: 0.9em;
+      margin-bottom: 40px;
+      font-style: italic;
+      color: #505050;
+      justify-content: center;
+      align-items: center;
+    }
+    .content__subtitle > span {
+      text-align: center;
+    }
+    /** SIDEBAR **/
+    .sidebar {
+      width: 100%;
+      margin-top: 10px;
+    }
 
-		.content{
-			flex:1;
-			margin-top: 5vh;
-			padding: 20px;
-		}
+    .sidebar__content__author {
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+    }
 
-		.content__subtitle{
-			display: flex;
-			flex-direction: column;
-			font-size: .9em;
-			margin-bottom: 40px;
-			font-style: italic;
-			color: gray;
-			justify-content: center;
-			align-items: center;
-		}
+    .sidebar__content__list {
+      margin: 5px 0px;
+      padding: 0px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    .sidebar__content__list > li {
+      margin-right: 5px;
+    }
 
-		li{
-			list-style: none;
-		}
+    .sidebar__content__list > li > a {
+      text-decoration: none;
+      color: black;
+    }
 
-		.sidebar{
-			padding: 20vh 20px;
-			width: 180px;
-			min-height: 200px;
-			max-height: 100vh;
-		}
+    .sidebar__content__social {
+      padding: 0px;
+      margin: 15px 0px;
+      text-transform: capitalize;
+      font-size: 0.8em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-		.sidebar__content{
-			padding-left: 30px;
-		}
+    .sidebar__content__social li {
+      margin: 0 5px;
+    }
 
-		.sidebar__content__author{
-			border-bottom: 1px solid gray;
-			text-align: center;
-			padding-bottom: 10px;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-		}
-		.sidebar__content__author span{
-			margin-top: 20px;
-		}
+    .sidebar__content__social li a {
+      color: black;
+      text-decoration: none;
+      font-size: 1.4em;
+    }
 
-		.sidebar__content__list{
-			margin-top: 20px;
-			padding: 0px;
-			display: flex;
-			flex-direction: column;
-		}
+    /** POST ***/
+    .post__head {
+      margin-bottom: 20px;
+    }
 
-		.sidebar__content__list > li > a {
-			text-decoration: none;
-			color: black;
-		}
+    .post__head__date {
+      font-size: 0.8em;
+      color: #505050;
+      text-align: center;
+    }
 
-		.sidebar__content__social{
-			text-transform: capitalize;
-			font-size: .8em;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
+    .post__head__title {
+      text-align: center;
+    }
 
-		.sidebar__content__social li{
-			margin: 0 5px;
-		}
-		
-		.sidebar__content__social li a {
-			color: black;
-			text-decoration: none;
-			font-size: 1.4em;
-		}
-	
-		.post__head{
-			margin-bottom: 20px;
-		}
+    .post__head__title > h1 {
+      font-size: 2em;
+    }
 
-		.post__head__date{
-			font-size: .8em;
-			color: gray;
-			text-align: center;
-		}
+    .post__head__tags {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-		.post__head__title{
-			text-align: center;
-		}
+    .post__head__tags > span {
+      font-size: 0.8em;
+      margin-right: 2px;
+      color: #505050;
+    }
 
-		.post__head__title > h1{
-			font-size: 1.2em;
-		}
+    .post__head__tags > .tag-list {
+      display: flex;
+      margin: 0px;
+      padding: 0px;
+    }
 
-		.post__head__tags{
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
+    .post__head__tags > .tag-list > li {
+      margin: 2px;
+      font-size: 0.8em;
+    }
 
-		.post__head__tags > span{
-			font-size: .8em;
-			margin-right: 2px;
-			color: gray;
-		}
+    .post__head__tags > .tag-list > li > a {
+      color: #505050;
+      text-decoration: none;
+    }
 
-		.post__head__tags > .tag-list{
-			display: flex;
-			margin: 0px;
-			padding: 0px;
-		}
+    .post__head__tags > .tag-list > li::before {
+      content: " / ";
+      color: #505050;
+    }
 
-		.post__head__tags > .tag-list > li{
-			margin: 2px;
-			font-size: .8em;
-		}
+    .post__head__tags > .tag-list > li:nth-of-type(n + 2)::after {
+      content: " / ";
+      color: #505050;
+    }
 
-		.post__head__tags > .tag-list > li > a{
-			color: grey;
-			text-decoration: none;
-		}
+    .post__body {
+      font-size: 1.2em;
+    }
 
-		.post__head__tags > .tag-list > li::before{ 
-			content: " / ";
-			color: grey;
-		}
-		
-		.post__head__tags > .tag-list  > li:nth-of-type(n+2)::after{ 
-			content: " / ";
-			color: grey;
-		}
+    .post__body > p {
+      text-align: justify;
+    }
+    .post__body li {
+      list-style: disc;
+    }
+    /** LISTA DE PUBLICACIONES **/
+    .list__publications {
+    }
 
-		.post__body  li{
-			list-style: disc;
-		}
+    .list__publications__publication {
+      display: flex;
+      margin-bottom: 10px;
+    }
 
-		.list__publications{
-		}
+    .list__publications__publication__date {
+      margin-right: 3vw;
+      color: #505050;
+    }
 
-		.list__publications__publication{
-			display: flex;
-			margin-bottom: 10px;
-		}
+    .list__publications__publication__item > a {
+      text-decoration: none;
+      color: black;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
 
-		.list__publications__publication__date{
-			margin-right: 3vw;
-			color: gray;
-		}
-		
-		.list__publications__publication__item > a {
-			text-decoration: none;
-			color: black;
-			font-size: 1.1em;
-			margin-bottom: 10px;
-		}
+    .list__publications__publication__item > .tag-list {
+      display: flex;
+      margin: 0px;
+      padding: 0px;
+      font-size: 0.9em;
+      margin-top: 10px;
+    }
+    .list__publications__publication__item > .tag-list > li::before {
+      content: "/ ";
+      color: #505050;
+    }
 
-		.list__publications__publication__item > .tag-list{
-			display: flex;
-			margin: 0px;
-			padding: 0px;
-			font-size: .9em;
-			margin-top: 10px;
-		}
-		.list__publications__publication__item > .tag-list > li::before {
-			content: "/ ";
-			color: gray;
-		}
-	
-		.list__publications__publication__item > .tag-list a{
-			color: gray;
-			text-decoration: none;
-			margin-right: 5px;
-		}
+    .list__publications__publication__item > .tag-list a {
+      color: #505050;
+      text-decoration: none;
+      margin-right: 5px;
+    }
 
-		.img--container{
-			max-width: 40vw;
-			margin: 20px 0px;
-		}
+    .img--container {
+      max-width: 40vw;
+      margin: 20px 0px;
+    }
 
-		.tags__page{
+    /** TAGS **/
+    .tags__page {
+    }
 
-		}
+    .tags__page__list-tags {
+      margin-bottom: 20px;
+    }
 
-		.tags__page__list-tags{
-			margin-bottom: 20px;
-		}
+    .tags__page__list-tags span {
+      color: #505050;
+      font-size: 0.8em;
+    }
 
-		.tags__page__list-tags span{
-			color: gray;
-			font-size: .8em;
-		}
+    .tags__page__list-tabs-pages span {
+      color: #505050;
+    }
 
-		.tags__page__list-tabs-pages span{
-			color: gray;
-		}
+    .tags__page__list-tabs-pages ul > li > a {
+      text-decoration: none;
+      color: black;
+    }
 
-		.tags__page__list-tabs-pages ul  > li > a{
-			text-decoration: none;
-			color: black;
-		}
-		
-		.tags__page > span {
-			color: gray;
-		}
-		.tags__page__list a{
-			color:black;
-			text-decoration: none;
-		}
+    .tags__page > span {
+      color: #505050;
+    }
+    .tags__page__list a {
+      color: black;
+      text-decoration: none;
+    }
 
-		#imgsolution{
-		}
+    /** CODIGO **/
 
-		.highlight{
-			background: #e2e2e2;
-			box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-			font-size: .9em;
-		}
-		.highlight .gutter{
-			background: rgba(0,0,0, .2);
-			font-size: .9em;
-			user-select: none;
-		}
+    .highlight {
+      background: #e2e2e28c;
+      box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+      font-size: 0.9em;
+      overflow: auto;
+      padding: 0px;
+      margin: 0px;
+    }
+    .highlight .code > pre {
+      margin-left: 10px;
+      font-size: 0.8em;
+    }
+    .highlight .gutter {
+      background: rgba(165, 165, 165, 0.2);
+      font-size: 0.8em;
+      user-select: none;
+    }
 
-		@media (max-width: 768px) {
-			.content{
-				margin-top: 10px;
-			}
-			.container{
-				margin: 0px 1vw;
-				flex-direction: column;
-			}
-			.sidebar{
-				width: 100%;
-				height: fit-content;
-				max-height: fit-content;
-				min-height: fit-content;
-				padding: 0px;
-			}
-			.sidebar__content{
-				margin: 0px;
-				padding: 0px;
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				align-items: center;
-				flex-wrap: wrap;
-			}
-			.sidebar__content__list{
-				display: flex;
-				flex-direction: row;
-				padding: 0px;
-				margin: 10px 0px;
-			}
+    /** GENERALES **/
+    li {
+      list-style: none;
+    }
+    /** SCROLLBAR **/
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      background-color: #f5f5f5;
+    }
 
-			.sidebar__content__list li{
-				margin: 0px 2px;
-			}
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+      background-color: #f5f5f5;
+    }
 
-			.sidebar__content__author {
-				display: flex;
-				flex-direction: column;
-				padding: 0px;
-				margin: 0px;
-				border: none;
-				width: 100%;
-				margin-top: 20px;
-			}
-			.sidebar__content__author img{
-				border-radius: 50%;
-				width: 55px;
-				height: 55px;
-			}
-			.sidebar__content__author span{
-				margin: 0px;
-				padding: 0px;
-				border: none;
-				font-size: .8em;
-				margin-top: 2px;
-			}
-			.sidebar__content__social{
-				margin: 0px;
-				padding: 0px;
-				width: 100%;
-				margin-top: 10px;
-			}
-
-			.list__publications {
-					margin: 0px;
-					padding: 0px;
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-			}
-		}
-		@media (max-width: 425px) {
-			.container{
-				margin: 0px 0vw;
-			}
-		}
-	</style>
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: gray;
+    }
+  </style>
 </head>
